@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Children's Health Monitoring</title>
+
+<style>
+body {
+  font-family: sans-serif;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+button {
+  background-color: #008000;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.results {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+</style>
+</head>
+<body>
+
+<h1>Children's Health Monitoring</h1>
+
+<form action="store_data.php" method="post">
+  <input type="text" id="name" placeholder="Child's name">
+  <input type="number" id="age" placeholder="Child's age">
+  <input type="number" id="temperature" placeholder="Child's temperature">
+  <input type="number" id="heart_rate" placeholder="Child's heart rate">
+  <input type="number" id="respiratory_rate" placeholder="Child's respiratory rate">
+  <button type="submit" onclick="monitorHealth();">Monitor Health</button>
+</form>
+
+<div class="results" id="results"></div>
+
+<script>
+function monitorHealth() {
+  // Get the child's information
+  var name = document.getElementById("name").value;
+  var age = document.getElementById("age").value;
+  var temperature = document.getElementById("temperature").value;
+  var heartRate = document.getElementById("heart_rate").value;
+  var respiratoryRate = document.getElementById("respiratory_rate").value;
+
+  // Submit the form data to the store_data.php script
+  document.querySelector('form').submit();
+}
+</script>
+
+</body>
+</html>
